@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+body{
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.3rem;
+    background-color:  hsl(226, 43%, 10%);
+    height: 100%;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.container{
+    margin:50px 0;
+    min-width: 250px;
+    max-width: 1050px;
+    padding: 5px;
+    height: fit-content;
+    min-height:475px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 225px 225px 225px 225px; 
+    justify-content: center;
+    grid-template-rows: 1fr 1fr; 
+    grid-gap:25px;
+}
+.main-card{
+    grid-row:1 / span 2;
+}
+.avatar{
+    width:75px;
+    border:2px solid white;
+    border-radius: 100%;
+    display: block;
+    margin-bottom:60px;
+}
+.mainCard-overlay{
+    position:absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color:hsl(246, 80%, 60%);
+    height:60%;
+    border-radius:13px;
+    padding:25px 0px 15px 2rem;
+}
+.buttons{
+    position: relative;
+    top:calc(60% + 50px);
+}
+button{
+    all:unset;
+    display: block;
+    opacity: .60;
+    color: hsl(236, 100%, 87%);
+    font-weight: 300;
+    font-size:1.05rem;
+    cursor: pointer;
+    margin:17px 0;
+}
+.active,button:hover{
+    color: white;
+    opacity: 1;
+}
+
+.card{
+    background-color: hsl(235, 46%, 20%);
+    width:225px;
+    box-sizing: border-box;
+    border-radius:11px;
+    position: relative;
+    overflow:hidden;
+    padding:10px 0px 7px 2rem;
+}
+.card-container .card:hover{
+    background-color: hsl(236, 45%, 33%);;
+    cursor: pointer;
+}
+.main-card:hover .mainCard-overlay,.mainCard-overlay:hover{
+    background-color: hsl(246, 100%, 71%);
+}
+.card-container{
+    position: relative;
+}
+.card-container .card{
+    height:80%;
+    width: 100%;
+    top:-15px;
+}
+.title{
+    box-sizing: border-box;    
+    width:calc(100%);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    margin: 20px auto;
+    padding-right:25px;
+}
+.title span{
+    color: white;
+}
+.title img{
+    cursor: pointer;
+    margin-left: auto;
+}
+.title img:hover{
+    filter: brightness(70%);
+}
+.category{
+    width: 100%;
+    height:60px;
+    border-radius:10px;
+    background-color: red;
+    position: relative;
+    top:0px;
+}
+.mainCard-overlay h1::before,.small-txt{
+    font-size: .80rem;
+    color: hsl(236, 100%, 87%);
+    font-weight: 400;
+    opacity: .85;
+}
+.category{
+    background-repeat: no-repeat;
+    background-size:75px;
+    background-position:135px -3px;
+}
+.one .category{
+    background-color: hsl(15, 100%, 70%);
+    background-image: url('./images/icon-work.svg');
+}
+.two .category{
+    background-color: hsl(195, 74%, 62%);
+    background-image: url('./images/icon-play.svg');
+}
+.three .category{
+    background-color: hsl(348, 100%, 68%);
+    background-image: url('./images/icon-study.svg');
+}
+.four .category{
+    background-color: hsl(145, 58%, 55%);
+    background-image: url('./images/icon-exercise.svg');
+}
+.five .category{
+    background-color: hsl(264, 64%, 52%);
+    background-image: url('./images/icon-social.svg');
+}
+.six .category{
+    background-color: hsl(43, 84%, 65%);
+    background-image: url('./images/icon-self-care.svg');
+}
+.large-txt,.name{
+    color: hsl(240, 100%, 98%);
+    font-weight: 300;
+    letter-spacing:1px;
+    position: relative;
+    margin-block-end: 0;
+}
+.mainCard-overlay .name{
+    font-size:2.15rem;
+}
+.mainCard-overlay h1::before{
+    content:'Report for';
+    position: absolute;
+    top:-17px;
+}
+@media only screen and (max-width:990px) {
+    .container{
+        padding:0;
+        grid-template-columns: 200px 200px 200px 200px; 
+    }
+    .card,.mainCard-overlay{
+        width:100%;
+        padding-left:1.5rem;
+    }
+    .category{
+        background-position:115px -3px;
+    }
+}
+@media only screen and (max-width:915px){
+    .container{
+        width:90%;
+        padding:0;
+        grid-template-columns: 175px 175px 175px 175px; 
+    }
+    .card,.mainCard-overlay{
+        padding-left:1.25rem;
+    }
+    .category{
+        background-position:90px -3px;
+    }
+}
+@media only screen and (max-width:810px){
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .category{
+        background-position:90% -5px;
+    }
+    .card,.mainCard-overlay{
+        width:100%;
+        padding-left:2rem;
+        padding-bottom:25px;
+    }
+    .mainCard-overlay{
+        display: flex;
+        align-items: center;
+        height:50px;
+    }
+    .mainCard-overlay .name{
+        font-size:1.75rem;
+    }
+    .avatar{
+        width:55px;
+        display: inline-block;
+        margin: 15px 25px 15px 5px;
+    }
+    .buttons{
+        position: relative;
+        top:90px;
+        width:calc(100% + 2rem);
+        right:2rem;
+        height:120px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+    button{
+        display: inline-block;
+    }
+    .title{
+        margin:15px auto 0 auto;
+        font-size: 1rem;
+    }
+    .large-txt{
+        margin-block-start:5px;
+        font-size:2.25rem;
+    }
+    .large-txt,.small-txt{
+        display: inline-block;
+    }
+    .small-txt{
+        margin-right:15px;
+        position: relative;
+        top:22px;
+        float: right;
+    }
+}
+@media only screen and (max-width:400px){
+    .card{
+        padding-left:25px;
+    }
+    .mainCard-overlay{
+        padding-left:15px;
+    }
+    .avatar{
+        margin-right:15px;
+    }
+    .mainCard-overlay .name{
+        font-size:1.25rem;
+    }
+    .buttons{
+        width:calc(100% + 25px);
+        right:25px;
+    }
+    .category{
+        height:50px;
+    }
+}
+@media only screen and (max-width:350px){
+    .card{
+        padding-left:15px;
+    }
+    .mainCard-overlay{
+        padding-left:5px;
+    }
+    .mainCard-overlay .name{
+        font-size:1.05rem;
+    }
+    .buttons{
+        width:calc(100% + 15px);
+        right:15px;
+    }
+    .large-txt{
+        font-size:1.75rem;
+    }
+    .small-txt{
+        top:15px;
+    }
+}
